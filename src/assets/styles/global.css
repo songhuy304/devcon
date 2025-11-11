@@ -1,0 +1,303 @@
+@import "fonts";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --textColorPrimary: #30354b;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.theme-index {
+  --theme-color-hover: #5742a9;
+  --theme-logo: url(/_next/static/media/bogota-stroked.188a1233.svg);
+  --theme-gradient: radial-gradient(
+    73.15% 179.46% at 90.19% 25.94%,
+    #4860ff 0%,
+    #9eabff 0.01%,
+    hsla(0, 0%, 64%, 0.2) 100%
+  );
+  --theme-gradient-footer: radial-gradient(
+    73.15% 179.46% at 90.19% 25.94%,
+    #cbd3ff 0%,
+    #cbd3ff 0.01%,
+    #cbd3ff 100%
+  );
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--textColorPrimary);
+  scroll-behavior: smooth;
+}
+
+.float-animation {
+  animation: float 1s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(4px);
+  }
+}
+.butterfly-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.9;
+  --butterfly-color: #f8df53;
+}
+
+.butterfly-container .butterflies-group {
+  position: absolute;
+  animation: butterflies-position-loop 7s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes butterflies-position-loop {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(100px);
+  }
+  50% {
+    transform: translate(30px, -70px);
+  }
+  75% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translate(-100px, -50px);
+  }
+}
+
+.butterfly-container .butterfly-1 {
+  animation: butterfly-radial-loop 40s linear infinite;
+}
+
+.butterfly-container .butterfly-oval-squish {
+  transform: scaleX(0.3);
+}
+
+.butterfly-container .butterfly-oval {
+  position: absolute;
+  animation: butterfly-radial-loop 4.8s linear infinite;
+}
+
+.butterfly-container .butterfly-radial {
+  position: absolute;
+  left: 80px;
+  top: 0;
+  animation: butterfly-oval-loop 4.8s linear infinite;
+}
+
+.butterfly-container .butterfly-1 .butterfly-gfx {
+  animation: butterfly-gfx-upright-loop 40s linear infinite;
+}
+
+.butterfly-container .butterfly-gfx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 20px;
+}
+
+.butterfly-container .butterfly-anim {
+  background: radial-gradient(
+      closest-side at 50% 50%,
+      var(--butterfly-color) 50%,
+      hsla(0, 0%, 100%, 0) 50%
+    ),
+    radial-gradient(
+      closest-side at 50% 50%,
+      var(--butterfly-color) 50%,
+      hsla(0, 0%, 100%, 0) 50%
+    );
+  background-repeat: no-repeat;
+  background-size: 90% 70%, 100% 70%;
+  background-position: 20% -40%, 0 40%;
+  width: 25px;
+  height: 20px;
+  animation: butterfly-anim-loop 0.15s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes butterfly-anim-loop {
+  0% {
+    transform: scaleY(1.2) rotate(40deg);
+  }
+  100% {
+    transform: scale(0.7, -1) rotate(-40deg);
+  }
+}
+
+@keyframes butterfly-gfx-upright-loop {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-1turn);
+  }
+}
+
+@keyframes butterfly-oval-loop {
+  0% {
+    transform: rotate(0deg) scaleX(3.3);
+  }
+  100% {
+    transform: rotate(-1turn) scaleX(3.3);
+  }
+}
+
+@keyframes butterfly-radial-loop {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.butterfly-container .right-butterfly {
+  animation: butterfly-radial-loop 35s linear infinite reverse;
+}
+
+.butterfly-container .right-butterfly .butterfly-oval-squish.right {
+  transform: scaleX(0.4);
+}
+
+.butterfly-container .right-butterfly .butterfly-oval.right {
+  animation: butterfly-radial-loop 5.5s linear infinite reverse;
+}
+
+.butterfly-container .right-butterfly .butterfly-radial.right {
+  animation: butterfly-oval-loop 5.5s linear infinite reverse;
+  left: 60px;
+}
+
+.butterfly-container .right-butterfly .butterfly-gfx.right {
+  animation: butterfly-gfx-upright-loop 35s linear infinite reverse;
+}
+
+.butterfly-container .right-butterfly .butterfly-anim.right {
+  animation: butterfly-anim-loop 0.18s ease-in-out infinite alternate-reverse;
+}
+
+.mask-image-marquee {
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 35%,
+    #000 65%,
+    transparent
+  );
+}
+
+.text-gradient-morph {
+  background: linear-gradient(
+    92deg,
+    #b2abfe -2.27%,
+    #ff8290 37.74%,
+    #f3c18f 65.44%,
+    #a1fec8 96.22%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 8px 0;
+  display: inline-block;
+  text-wrap: nowrap;
+  line-height: 1.25em;
+  font-size: 26px;
+  font-weight: 700;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.swiper {
+  overflow: unset !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.card-flip {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  transition: transform 1s;
+
+  perspective: 500px;
+}
+
+.card-flip--content {
+  position: absolute;
+  border: 1px solid #e2e3ff;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.1);
+
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card-flip:hover .card-flip--content {
+  transform: rotateY(-180deg);
+  transition: transform 1s;
+}
+
+.card-flip--front,
+.card-flip--back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.card-flip--back {
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.mask-gradient {
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
