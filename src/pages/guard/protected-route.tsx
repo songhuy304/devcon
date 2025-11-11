@@ -1,8 +1,8 @@
 import { Navigate, useLocation } from "react-router-dom";
 
-import React from "react";
 import LoadingPage from "@/pages/loading";
-import { useAppDispatch, useAppSelector } from "@/shared/store";
+import { useAppSelector } from "@/shared/store";
+import React from "react";
 
 interface ProtectedRouteProps {
   element: React.FC | React.ComponentClass;
@@ -15,7 +15,6 @@ const PrivateRoute: React.FC<ProtectedRouteProps> = ({
   ...props
 }) => {
   const location = useLocation();
-  const dispatch = useAppDispatch();
 
   const isAuthenticated = useAppSelector(
     (state) => state.authentication.isAuthenticated
